@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: #333;
+  background-color: #faf8f5;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #fff;
+  padding: 25px 80px;
+  border-bottom: 1px solid #e5e0d8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 45px;
+  letter-spacing: 3px;
+}
+
+nav a {
+  color: #333;
+  text-decoration: none;
+  margin-right: 50px;
+}
+
+nav a:hover {
+  color: #8b6f47;
+}
+
+.fabric-grid {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+  gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.fabric-card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.fabric-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background-color: #e8e2d8;
+}
+
+.fabric-card h3 {
+  margin: 16px 16px 4px;
+  font-size: 18px;
+}
+
+.fabric-card p {
+  margin: 0 16px 16px;
+  color: #777;
+  font-size: 14px;
+}
+
+.fabric-card button {
+  margin: 0 16px 16px;
+  padding: 10px 20px;
+  border: 1px solid #333;
+  background-color: transparent;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.fabric-card button:hover:not(:disabled) {
+  background-color: #f0ebe3;
+  color: #1a1a1a;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #999;
+  font-size: 14px;
+}
+
+
+
+.filter {
+  max-width: 1100px;
+  margin: 40px auto 0;
+  padding: 0 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.filter button {
+  padding: 8px 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+}
+
+.filter button.active {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+
+
+/* 平板：宽度 900px 以下，每行 2 张 */
+@media (max-width: 900px) {
+  .fabric-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+/* 手机：宽度 600px 以下，每行 1 张，导航改为上下排列 */
+@media (max-width: 600px) {
+  .fabric-grid {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 20px;
+  }
+}
+
+.fabric-card button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
